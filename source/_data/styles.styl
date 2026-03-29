@@ -9,13 +9,12 @@
 .pagination,
 .footer-inner,
 .widget-wrap,
-.site-brand-container,
 .site-nav,
 .column,
 .search-popup {
   border-radius: 15px !important;
   overflow: hidden !important; 
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05) !important;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05) !important;
 }
 
 // 特别锁定页眉与导航菜单（Gemini 方案中 site-nav 及其内部 menu 都是独立层）
@@ -27,11 +26,16 @@
   border-radius: 15px 15px 0 0 !important;
 }
 
-// 消除容器可能自带的直角底层背景
+// 消除容器直角，但保留组件内部配色
 .header,
 .column {
   background: transparent !important;
   box-shadow: none !important;
+}
+.site-brand-container,
+.site-nav {
+  // 亮色下默认为白
+  background: var(--content-bg-color) !important;
 }
 
 // 2. 彻底禁用头像旋转
@@ -43,7 +47,7 @@
   }
 }
 
-// 3. 【统一底部配色】消除黑色区域，保持与亮色一致的透明层级感
+// 3. 【统一底部配色】消除区域偏差
 .footer {
   background: transparent !important;
   color: var(--text-color) !important;
@@ -51,7 +55,6 @@
 .footer-inner {
   background: transparent !important; 
   box-shadow: none !important;
-  margin-top: 10px !important;
 }
 
 // 4. 【高性能暗黑模式】变量集
@@ -67,20 +70,26 @@
   --btn-default-bg: #333;
   --btn-default-color: #eee;
   --btn-default-border-color: #444;
+  --menu-item-bg-color: #333;
   
   body {
-    background: #1a1a1a !important; // 对应白色的浅灰背景
+    background: #1a1a1a !important;
     color: #ddd !important;
   }
   
-  // 保持与白色主题一致的“卡片式”浮动感
   .main-inner, .sidebar-inner, .post-block, .site-brand-container, .site-nav, .search-popup {
-    background: #242424 !important; // 对应白色的纯白卡片
-    box-shadow: 0 2px 20px rgba(0,0,0,0.5) !important;
+    background: #242424 !important;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4) !important;
   }
   
   .site-title, .site-author-name, .menu-item a, .site-subtitle {
     color: #eee !important;
+  }
+
+  // 强化激活/暗黑菜单对比度
+  .menu-item .menu-item-active a, .menu-item a:hover {
+    background: #333 !important;
+    color: #fff !important;
   }
   
   canvas {
