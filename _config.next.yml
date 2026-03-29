@@ -1,0 +1,25 @@
+# NexT Theme Configuration Overrides
+
+# ---------------------------------------------------------------
+# Scheme Settings
+# ---------------------------------------------------------------
+
+# Schemes
+# scheme: Muse
+# scheme: Mist
+# scheme: Pisces
+scheme: Gemini
+
+# ---------------------------------------------------------------
+# Font & Animation Settings
+# ---------------------------------------------------------------
+motion:
+  enable: true
+
+# ---------------------------------------------------------------
+# Other Settings
+# ---------------------------------------------------------------
+
+# NexT theme plugin: Hexo Blog Encrypt
+# https://github.com/D0n9X1n/hexo-blog-encrypt
+# The encryption will be handled by the plugin, so we just declare it if needed.
