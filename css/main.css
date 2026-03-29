@@ -1249,7 +1249,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #457cff;
+    background: #ffff16;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -2843,14 +2843,9 @@ header.header {
   }
 }
 .post-block,
-.main-inner,
-.header-inner,
 .sidebar-inner,
-.sidebar,
 .comments,
 .pagination,
-.footer-inner,
-.widget-wrap,
 .search-popup {
   border-radius: 15px !important;
   box-shadow: 0 4px 15px rgba(0,0,0,0.05) !important;
@@ -2906,12 +2901,13 @@ header.header {
   background: #1a1a1a !important;
   color: #ddd !important;
 }
-:root[data-theme="dark"] .main-inner,
 :root[data-theme="dark"] .sidebar-inner,
 :root[data-theme="dark"] .post-block,
 :root[data-theme="dark"] .site-brand-container,
 :root[data-theme="dark"] .site-nav,
-:root[data-theme="dark"] .search-popup {
+:root[data-theme="dark"] .search-popup,
+:root[data-theme="dark"] .comments,
+:root[data-theme="dark"] .pagination {
   background: #242424 !important;
   box-shadow: 0 4px 20px rgba(0,0,0,0.4) !important;
 }
