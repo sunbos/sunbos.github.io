@@ -1,0 +1,65 @@
+<!-- 网站运行时间 -->
+<div class="run-time" style="margin-top: 10px; font-size: 13px; color: #999;">
+  <span id="timeDate">载入天数...</span> 
+  <span id="times">载入时分秒...</span>
+</div>
+<script>
+  var now = new Date();
+  function createtime() {
+    // 网站开始运行的时间
+    var grt = new Date("6/1/2021 00:00:00");
+    now.setTime(now.getTime() + 250);
+    var days = (now - grt) / 1000 / 60 / 60 / 24;
+    var dnum = Math.floor(days);
+    var hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum);
+    var hnum = Math.floor(hours);
+    if(String(hnum).length == 1) { hnum = "0" + hnum; }
+    var minutes = (now - grt) / 1000 / 60 - (1440 * dnum) - (60 * hnum);
+    var mnum = Math.floor(minutes);
+    if(String(mnum).length == 1) { mnum = "0" + mnum; }
+    var seconds = (now - grt) / 1000 - (86400 * dnum) - (3600 * hnum) - (60 * mnum);
+    var snum = Math.round(seconds);
+    if(String(snum).length == 1) { snum = "0" + snum; }
+    
+    document.getElementById("timeDate").innerHTML = "小站稳定运行了 " + dnum + " 天 ";
+    document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+  }
+  setInterval("createtime()", 250);
+</script>
+
+<!-- 动态标题 -->
+<script>
+  var titleTime;
+  var OriginTitle = document.title;
+  document.addEventListener("visibilitychange", function() {
+    if (document.hidden) {
+      document.title = "(*^▽^*)我藏好了哦~ " + OriginTitle;
+      clearTimeout(titleTime);
+    } else {
+      document.title = "q(≧▽≦q)被你发现啦~ " + OriginTitle;
+      titleTime = setTimeout(function() {
+        document.title = OriginTitle;
+      }, 2000);
+    }
+  });
+</script>
+
+<!-- 暗黑模式 (Darkmode) -->
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+<script>
+  var options = {
+    bottom: "32px",
+    right: "32px",
+    left: "unset",
+    time: "0.5s",
+    mixColor: "transparent",
+    backgroundColor: "transparent",
+    buttonColorDark: "#100f2c",
+    buttonColorLight: "#fff",
+    saveInCookies: true,
+    label: "🌓",
+    autoMatchOsTheme: true
+  };
+  const darkmode = new Darkmode(options);
+  darkmode.showWidget();
+</script>

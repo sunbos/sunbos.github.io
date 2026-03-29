@@ -3,9 +3,42 @@
 scheme: Gemini
 
 avatar:
-  url: https://avatars.githubusercontent.com/u/21107549?v=4
+  url: /images/avatar.gif
   rounded: true
   rotated: true
+
+sidebar:
+  position: right
+  display: post
+  padding: 18
+  offset: 12
+
+font:
+  enable: true
+  host: https://fonts.loli.net
+  global:
+    family: Monda
+  title:
+    family: Roboto Slab
+  headings:
+    family: Roboto Slab
+  posts:
+    family: Noto Serif SC
+  codes:
+    family: Xcode
+
+creative_commons:
+  license: by-nc-sa
+  sidebar: true
+  post: true
+
+reward_settings:
+  enable: true
+  animation: true
+
+reward:
+  wechatpay: /images/wechatpay.png
+  alipay: /images/alipay.png
 
 social:
   GitHub: https://github.com/sunbos || fab fa-github
@@ -50,3 +83,6 @@ waline:
 
 custom_file_path:
   bodyEnd: source/_data/body-end.njk
+  footer: source/_data/footer.njk
+  sidebar: source/_data/sidebar.njk
+  postBodyEnd: source/_data/post-body-end.njk
