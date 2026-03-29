@@ -1249,7 +1249,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #fc00b6;
+    background: #08a8f7;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -2850,12 +2850,12 @@ header.header {
 .comments,
 .pagination,
 .footer-inner,
-.widget-wrap {
-  border-radius: 15px !important;
-  overflow: hidden !important;
-}
+.widget-wrap,
+.site-brand-container,
+.site-nav,
 .column {
   border-radius: 15px !important;
+  overflow: hidden !important;
 }
 .site-author-image {
   animation: none !important;
@@ -2864,7 +2864,7 @@ header.header {
 .site-author-image:hover {
   transform: scale(1.1) !important;
 }
-[data-theme="dark"] {
+:root[data-theme="dark"] {
   --body-bg-color: #1a1a1a;
   --content-bg-color: #242424;
   --card-bg-color: #242424;
@@ -2877,22 +2877,25 @@ header.header {
   --btn-default-color: #eee;
   --btn-default-border-color: #444;
 }
-[data-theme="dark"] body {
+:root[data-theme="dark"] body {
   background: #1a1a1a !important;
   color: #ddd !important;
 }
-[data-theme="dark"] .header,
-[data-theme="dark"] .main-inner,
-[data-theme="dark"] .sidebar-inner,
-[data-theme="dark"] .post-block,
-[data-theme="dark"] .footer {
+:root[data-theme="dark"] .header,
+:root[data-theme="dark"] .main-inner,
+:root[data-theme="dark"] .sidebar-inner,
+:root[data-theme="dark"] .post-block,
+:root[data-theme="dark"] .footer,
+:root[data-theme="dark"] .site-brand-container,
+:root[data-theme="dark"] .site-nav {
   background: #242424 !important;
 }
-[data-theme="dark"] .site-title,
-[data-theme="dark"] .site-author-name,
-[data-theme="dark"] .menu-item a {
+:root[data-theme="dark"] .site-title,
+:root[data-theme="dark"] .site-author-name,
+:root[data-theme="dark"] .menu-item a,
+:root[data-theme="dark"] .site-subtitle {
   color: #eee !important;
 }
-[data-theme="dark"] canvas {
+:root[data-theme="dark"] canvas {
   opacity: 0.8;
 }
