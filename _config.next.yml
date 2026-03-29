@@ -3,7 +3,7 @@
 scheme: Gemini
 
 avatar:
-  url: /images/avatar.gif
+  url: https://avatars.githubusercontent.com/u/21107549?v=4
   rounded: true
   rotated: true
 
@@ -12,6 +12,16 @@ sidebar:
   display: post
   padding: 18
   offset: 12
+
+menu:
+  home: / || fas fa-home
+  about: /about/ || fas fa-user
+  tags: /tags/ || fas fa-tags
+  categories: /categories/ || fas fa-th
+  archives: /archives/ || fas fa-archive
+  schedule: /schedule/ || fas fa-calendar
+
+darkmode: true
 
 font:
   enable: true
@@ -82,6 +92,7 @@ waline:
   visitor: true
 
 custom_file_path:
+  variables: source/_data/variables.styl
   bodyEnd: source/_data/body-end.njk
   footer: source/_data/footer.njk
   sidebar: source/_data/sidebar.njk
