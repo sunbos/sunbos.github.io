@@ -17,10 +17,10 @@
   box-shadow: 0 2px 10px rgba(0,0,0,0.05) !important;
 }
 
-// 特别锁定菜单栏底部圆角（Gemini 方案中 site-nav 嵌套较深）
-.site-nav {
+// 特别锁定菜单栏底部圆角（Gemini 方案中 site-nav 及其内部 menu 都是独立层）
+.site-nav,
+.site-nav .menu {
   border-radius: 0 0 15px 15px !important;
-  margin-top: -1px; // 解决可能的缝隙
 }
 .site-brand-container {
   border-radius: 15px 15px 0 0 !important;
@@ -41,7 +41,7 @@
   color: var(--text-color) !important;
 }
 .footer-inner {
-  background: transparent !important; // 不再使用实体色块，保持通透
+  background: transparent !important; 
   box-shadow: none !important;
   margin-top: 10px !important;
 }
@@ -61,13 +61,14 @@
   --btn-default-border-color: #444;
   
   body {
-    background: #1a1a1a !important;
+    background: #1a1a1a !important; // 对应白色的浅灰背景
     color: #ddd !important;
   }
   
-  // 仅对“卡片”进行着色
+  // 保持与白色主题一致的“卡片式”浮动感
   .main-inner, .sidebar-inner, .post-block, .site-brand-container, .site-nav, .search-popup {
-    background: #242424 !important;
+    background: #242424 !important; // 对应白色的纯白卡片
+    box-shadow: 0 2px 20px rgba(0,0,0,0.5) !important;
   }
   
   .site-title, .site-author-name, .menu-item a, .site-subtitle {
