@@ -54,7 +54,7 @@
 }
 
 // 5. 强化导航菜单选中与悬停状态 (高对比度设计)
-.menu-item-active a, .menu-item a:hover {
+.menu-item a.menu-item-active, .menu-item a:hover {
   background: #333 !important; /* 亮色模式下直接使用深黑底色反转 */
   color: #fff !important;      /* 文字纯白 */
   border-radius: 8px !important;
@@ -97,7 +97,7 @@
   }
 
   // 强化激活/暗黑菜单对比度 (高对比度反转设计)
-  .menu-item-active a, .menu-item a:hover {
+  .menu-item a.menu-item-active, .menu-item a:hover {
     background: #e5e5e5 !important; /* 暗色模式下使用非常显眼的亮灰色 */
     color: #222 !important;         /* 文字变成深黑 */
     font-weight: 600 !important;
