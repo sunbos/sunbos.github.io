@@ -53,11 +53,18 @@
   box-shadow: none !important;
 }
 
-// 5. 强化导航菜单选中与悬停状态
+// 5. 强化导航菜单选中与悬停状态 (高对比度设计)
 .menu-item-active a, .menu-item a:hover {
-  background: #f0f0f0 !important; /* 亮色模式下明显的灰底 */
-  color: #222 !important;
-  border-radius: 8px !important; /* 让选中背景看起来像个圆润的按钮 */
+  background: #333 !important; /* 亮色模式下直接使用深黑底色反转 */
+  color: #fff !important;      /* 文字纯白 */
+  border-radius: 8px !important;
+  font-weight: 600 !important; /* 文字加粗 */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2) !important; /* 增加微悬浮感 */
+}
+
+// 隐藏原生那颗容易被忽略的小灰点
+.main-menu .menu-item-active::after {
+  display: none !important;
 }
 
 // 4. 【高性能暗黑模式】变量集
@@ -89,10 +96,12 @@
     color: #eee !important;
   }
 
-  // 强化激活/暗黑菜单对比度
+  // 强化激活/暗黑菜单对比度 (高对比度反转设计)
   .menu-item-active a, .menu-item a:hover {
-    background: #333 !important;
-    color: #fff !important;
+    background: #e5e5e5 !important; /* 暗色模式下使用非常显眼的亮灰色 */
+    color: #222 !important;         /* 文字变成深黑 */
+    font-weight: 600 !important;
+    box-shadow: 0 2px 6px rgba(255,255,255,0.1) !important;
   }
   
   canvas {
