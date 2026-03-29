@@ -21,6 +21,11 @@ menu:
   archives: /archives/ || fas fa-archive
   schedule: /schedule/ || fas fa-calendar
 
+menu_settings:
+  icons: true
+  hidden: false
+  badges: true
+
 darkmode: true
 
 font:
