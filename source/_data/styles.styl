@@ -1,11 +1,18 @@
 // 1. 视觉优化与圆角修补
-// 大部分基础圆角（如卡片、侧边栏）已遵循 NexT 规范，由 variables.styl 中的 $border-radius 变量自动接管。
-// 这里仅针对 Gemini 主题特有的“上下拼接”结构（头部Logo区与底部菜单区）进行缝合并统一阴影。
+// 强制将各个主要容器应用 15px 圆角和柔和阴影，
+// 且去除了之前容易引发副作用的全局 overflow 隐藏限制，以确保子组件正常渲染。
 
 .post-block,
+.main-inner,
+.header-inner,
 .sidebar-inner,
+.sidebar,
 .comments,
+.pagination,
+.footer-inner,
+.widget-wrap,
 .search-popup {
+  border-radius: 15px !important;
   box-shadow: 0 4px 15px rgba(0,0,0,0.05) !important;
 }
 
