@@ -1,29 +1,24 @@
-// 1. 强制圆角：针对 Gemini 高版本对直角的顽固设置进行全面“打磨”
+// 1. 视觉优化与圆角修补
+// 大部分基础圆角（如卡片、侧边栏）已遵循 NexT 规范，由 variables.styl 中的 $border-radius 变量自动接管。
+// 这里仅针对 Gemini 主题特有的“上下拼接”结构（头部Logo区与底部菜单区）进行缝合并统一阴影。
+
 .post-block,
-.main-inner,
-.header,
-.header-inner,
 .sidebar-inner,
-.sidebar,
 .comments,
-.pagination,
-.footer-inner,
-.widget-wrap,
-.site-nav,
-.column,
 .search-popup {
-  border-radius: 15px !important;
-  overflow: hidden !important; 
   box-shadow: 0 4px 15px rgba(0,0,0,0.05) !important;
 }
 
-// 特别锁定页眉与导航菜单（Gemini 方案中 site-nav 及其内部 menu 都是独立层）
-.site-nav,
-.site-nav .menu {
-  border-radius: 0 0 15px 15px !important;
-}
+// 缝合头部拼接区域
 .site-brand-container {
   border-radius: 15px 15px 0 0 !important;
+}
+.site-nav {
+  border-radius: 0 0 15px 15px !important;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05) !important;
+}
+.site-nav .menu {
+  border-radius: 0 0 15px 15px !important;
 }
 
 // 消除容器直角，但保留组件内部配色
