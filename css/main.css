@@ -1249,7 +1249,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #ffff16;
+    background: #ffff74;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -2883,6 +2883,12 @@ header.header {
   background: transparent !important;
   box-shadow: none !important;
 }
+.menu-item-active a,
+.menu-item a:hover {
+  background: #f0f0f0 !important; /* 亮色模式下明显的灰底 */
+  color: #222 !important;
+  border-radius: 8px !important; /* 让选中背景看起来像个圆润的按钮 */
+}
 :root[data-theme="dark"] {
   --body-bg-color: #1a1a1a;
   --content-bg-color: #242424;
@@ -2917,7 +2923,7 @@ header.header {
 :root[data-theme="dark"] .site-subtitle {
   color: #eee !important;
 }
-:root[data-theme="dark"] .menu-item .menu-item-active a,
+:root[data-theme="dark"] .menu-item-active a,
 :root[data-theme="dark"] .menu-item a:hover {
   background: #333 !important;
   color: #fff !important;
