@@ -1249,7 +1249,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #17ff79;
+    background: #ffb3ab;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -2859,9 +2859,9 @@ header.header {
   overflow: hidden !important;
   box-shadow: 0 2px 10px rgba(0,0,0,0.05) !important;
 }
-.site-nav {
+.site-nav,
+.site-nav .menu {
   border-radius: 0 0 15px 15px !important;
-  margin-top: -1px;
 }
 .site-brand-container {
   border-radius: 15px 15px 0 0 !important;
@@ -2906,6 +2906,7 @@ header.header {
 :root[data-theme="dark"] .site-nav,
 :root[data-theme="dark"] .search-popup {
   background: #242424 !important;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.5) !important;
 }
 :root[data-theme="dark"] .site-title,
 :root[data-theme="dark"] .site-author-name,
