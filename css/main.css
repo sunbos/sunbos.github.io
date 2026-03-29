@@ -1249,7 +1249,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #ffff74;
+    background: #3effff;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -2885,9 +2885,14 @@ header.header {
 }
 .menu-item-active a,
 .menu-item a:hover {
-  background: #f0f0f0 !important; /* 亮色模式下明显的灰底 */
-  color: #222 !important;
-  border-radius: 8px !important; /* 让选中背景看起来像个圆润的按钮 */
+  background: #333 !important; /* 亮色模式下直接使用深黑底色反转 */
+  color: #fff !important; /* 文字纯白 */
+  border-radius: 8px !important;
+  font-weight: 600 !important; /* 文字加粗 */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2) !important; /* 增加微悬浮感 */
+}
+.main-menu .menu-item-active::after {
+  display: none !important;
 }
 :root[data-theme="dark"] {
   --body-bg-color: #1a1a1a;
@@ -2925,8 +2930,10 @@ header.header {
 }
 :root[data-theme="dark"] .menu-item-active a,
 :root[data-theme="dark"] .menu-item a:hover {
-  background: #333 !important;
-  color: #fff !important;
+  background: #e5e5e5 !important; /* 暗色模式下使用非常显眼的亮灰色 */
+  color: #222 !important; /* 文字变成深黑 */
+  font-weight: 600 !important;
+  box-shadow: 0 2px 6px rgba(255,255,255,0.1) !important;
 }
 :root[data-theme="dark"] canvas {
   opacity: 0.8;
