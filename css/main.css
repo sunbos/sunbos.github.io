@@ -1249,7 +1249,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #df6781;
+    background: #3b2b8e;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -2843,9 +2843,16 @@ header.header {
   }
 }
 .post-block,
+.main-inner,
+.header-inner,
 .sidebar-inner,
+.sidebar,
 .comments,
+.pagination,
+.footer-inner,
+.widget-wrap,
 .search-popup {
+  border-radius: 15px !important;
   box-shadow: 0 4px 15px rgba(0,0,0,0.05) !important;
 }
 .site-brand-container {
