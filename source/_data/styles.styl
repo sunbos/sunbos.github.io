@@ -11,14 +11,12 @@
 .comments,
 .pagination,
 .footer-inner,
-.widget-wrap {
-  border-radius: 15px !important;
-  overflow: hidden !important; // 确保内部图片/色块不会溢出圆角
-}
-
-// 侧边栏整体在某些分辨率下会有直角容器，这里一并修掉
+.widget-wrap,
+.site-brand-container,
+.site-nav,
 .column {
   border-radius: 15px !important;
+  overflow: hidden !important; // 确保内部图片/色块不会溢出圆角
 }
 
 // 2. 彻底禁用头像旋转（物理禁掉属性）
@@ -31,7 +29,8 @@
 }
 
 // 3. 【高性能暗黑模式】变量集：不再使用滤镜，而是直接重载配色
-[data-theme="dark"] {
+// 强制最高特权级覆盖，确保点击后瞬间变色
+:root[data-theme="dark"] {
   --body-bg-color: #1a1a1a;
   --content-bg-color: #242424;
   --card-bg-color: #242424;
@@ -50,12 +49,12 @@
     color: #ddd !important;
   }
   
-  .header, .main-inner, .sidebar-inner, .post-block, .footer {
+  .header, .main-inner, .sidebar-inner, .post-block, .footer, .site-brand-container, .site-nav {
     background: #242424 !important;
   }
   
   // 修正那些在暗色下太亮的组件
-  .site-title, .site-author-name, .menu-item a {
+  .site-title, .site-author-name, .menu-item a, .site-subtitle {
     color: #eee !important;
   }
   
