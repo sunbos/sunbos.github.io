@@ -110,7 +110,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fas fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fas fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fas fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fas fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fas fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fas fa-calendar fa-fw"></i>日程表</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fas fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fas fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fas fa-tags fa-fw"></i>标签<span class="badge">1</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fas fa-th fa-fw"></i>分类<span class="badge">0</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fas fa-archive fa-fw"></i>归档<span class="badge">2</span></a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fas fa-calendar fa-fw"></i>日程表</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -336,7 +336,46 @@
   });
 </script>
 
-<!-- 暗黑模式 (Darkmode) 已交由主题原生接管，不再引用性能沉重的旧脚本 -->
+<!-- 暗黑模式 (原生高性能版UI开关) -->
+<div id="darkmode-toggle" style="position: fixed; bottom: 32px; right: 32px; width: 40px; height: 40px; border-radius: 50%; background: var(--body-bg-color); box-shadow: 0 2px 10px rgba(0,0,0,0.2); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 20px; z-index: 9999; user-select: none; transition: transform 0.3s ease;">
+  🌓
+</div>
+
+<script>
+  (function() {
+    var toggleBtn = document.getElementById('darkmode-toggle');
+    var htmlElement = document.documentElement;
+    // 初次加载时读取本地缓存或系统主题
+    var savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      if (savedTheme === 'dark') {
+          htmlElement.setAttribute('data-theme', 'dark');
+      } else {
+          htmlElement.setAttribute('data-theme', 'light');
+      }
+    }
+
+    toggleBtn.addEventListener('click', function() {
+      // 按钮点按动画反馈
+      toggleBtn.style.transform = 'scale(0.9)';
+      setTimeout(function(){ toggleBtn.style.transform = 'scale(1)'; }, 150);
+      
+      var isDark = htmlElement.getAttribute('data-theme') === 'dark';
+      if (!isDark && !htmlElement.getAttribute('data-theme')) {
+        // 如果没有被设置过属性，检查是否通过媒体查询自带了暗色
+        isDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      }
+
+      if (isDark) {
+        htmlElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+      } else {
+        htmlElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+      }
+    });
+  })();
+</script>
 
 
     </div>

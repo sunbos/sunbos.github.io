@@ -1412,7 +1412,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #90ac13;
+    background: #7c12d9;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -2877,17 +2877,6 @@ header.header {
   .menu .menu-item.menu-item-search {
     display: none;
   }
-}
-.main-menu .menu-item-active::after {
-  background: #bbb;
-  border-radius: 50%;
-  content: ' ';
-  height: 6px;
-  margin-top: -3px;
-  position: absolute;
-  right: 15px;
-  top: 50%;
-  width: 6px;
 }
 .sub-menu {
   margin: 0;
