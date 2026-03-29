@@ -378,7 +378,6 @@
 <script>
   var now = new Date();
   function createtime() {
-    // 网站开始运行的时间
     var grt = new Date("6/1/2021 00:00:00");
     now.setTime(now.getTime() + 250);
     var days = (now - grt) / 1000 / 60 / 60 / 24;
@@ -392,7 +391,6 @@
     var seconds = (now - grt) / 1000 - (86400 * dnum) - (3600 * hnum) - (60 * mnum);
     var snum = Math.round(seconds);
     if(String(snum).length == 1) { snum = "0" + snum; }
-    
     document.getElementById("timeDate").innerHTML = "小站稳定运行了 " + dnum + " 天 ";
     document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
   }
@@ -416,43 +414,51 @@
   });
 </script>
 
-<!-- 暗黑模式 (Darkmode) -->
-<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+<!-- 【终极版】高性能主题切换器 (零卡顿且支持持久化) -->
+<div id="theme-switch" style="position: fixed; bottom: 32px; right: 32px; width: 40px; height: 40px; border-radius: 50%; background: #eee; box-shadow: 0 4px 10px rgba(0,0,0,0.15); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 20px; z-index: 10000; transition: all 0.3s cubic-bezier(.65,.05,.36,1);">
+  🌓
+</div>
+
 <script>
-  // 【防止卡顿的核心黑科技】：让由于高频重绘导致显卡被大量计算的 canvas 背景画布免于滤镜计算
-  document.addEventListener("DOMContentLoaded", function() {
-    var canvases = document.querySelectorAll("canvas");
-    canvases.forEach(function(c) {
-      c.classList.add("darkmode-ignore");
+  (function() {
+    var root = document.documentElement;
+    var btn = document.getElementById('theme-switch');
+    
+    // 初始化主题：读取缓存，若无缓存则读取系统设置
+    var stored = localStorage.getItem('user-theme');
+    if (!stored) {
+      stored = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    
+    // 强制赋予初始属性
+    root.setAttribute('data-theme', stored);
+    updateBtnStyle(stored);
+
+    btn.addEventListener('click', function() {
+      // 触感动画效果
+      btn.style.transform = 'scale(0.85)';
+      setTimeout(() => btn.style.transform = 'scale(1)', 100);
+      
+      var current = root.getAttribute('data-theme');
+      var target = current === 'dark' ? 'light' : 'dark';
+      
+      root.setAttribute('data-theme', target);
+      localStorage.setItem('user-theme', target);
+      updateBtnStyle(target);
     });
-  });
 
-  var options = {
-    bottom: "32px",
-    right: "32px",
-    left: "unset",
-    time: "0.5s",
-    mixColor: "#fff",
-    backgroundColor: "#fff",
-    buttonColorDark: "#100f2c",
-    buttonColorLight: "#fff",
-    saveInCookies: true,
-    label: "🌓",
-    autoMatchOsTheme: true
-  };
-  const darkmode = new Darkmode(options);
-  darkmode.showWidget();
-
-  // 为点击鼠标后产生的烟花 canvas 动态添加免滤镜计算标签
-  document.addEventListener("mousedown", function() {
-    setTimeout(function() {
-      // 获取最后添加的一个 canvas（通常是烟花或最新的绘图板）
-      var allCanvas = document.querySelectorAll("canvas");
-      if (allCanvas.length > 0) {
-        allCanvas[allCanvas.length - 1].classList.add("darkmode-ignore");
+    function updateBtnStyle(theme) {
+      if (theme === 'dark') {
+        btn.style.background = '#333';
+        btn.style.color = '#fff';
+        btn.innerText = '🌙';
+      } else {
+        btn.style.background = '#eee';
+        btn.style.color = '#333';
+        btn.innerText = '🌓';
       }
-    }, 100);
-  });
+    }
+  })();
 </script>
 
 
