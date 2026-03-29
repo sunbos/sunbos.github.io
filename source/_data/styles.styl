@@ -1,6 +1,7 @@
 // 1. 强制圆角：针对 Gemini 高版本对直角的顽固设置进行全面“打磨”
 .post-block,
 .main-inner,
+.header,
 .header-inner,
 .sidebar-inner,
 .sidebar,
@@ -17,13 +18,20 @@
   box-shadow: 0 2px 10px rgba(0,0,0,0.05) !important;
 }
 
-// 特别锁定菜单栏底部圆角（Gemini 方案中 site-nav 及其内部 menu 都是独立层）
+// 特别锁定页眉与导航菜单（Gemini 方案中 site-nav 及其内部 menu 都是独立层）
 .site-nav,
 .site-nav .menu {
   border-radius: 0 0 15px 15px !important;
 }
 .site-brand-container {
   border-radius: 15px 15px 0 0 !important;
+}
+
+// 消除容器可能自带的直角底层背景
+.header,
+.column {
+  background: transparent !important;
+  box-shadow: none !important;
 }
 
 // 2. 彻底禁用头像旋转
