@@ -1249,7 +1249,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #c6faff;
+    background: #df6781;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -2843,28 +2843,20 @@ header.header {
   }
 }
 .post-block,
-.main-inner,
-.header,
-.header-inner,
 .sidebar-inner,
-.sidebar,
 .comments,
-.pagination,
-.footer-inner,
-.widget-wrap,
-.site-nav,
-.column,
 .search-popup {
-  border-radius: 15px !important;
-  overflow: hidden !important;
   box-shadow: 0 4px 15px rgba(0,0,0,0.05) !important;
-}
-.site-nav,
-.site-nav .menu {
-  border-radius: 0 0 15px 15px !important;
 }
 .site-brand-container {
   border-radius: 15px 15px 0 0 !important;
+}
+.site-nav {
+  border-radius: 0 0 15px 15px !important;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05) !important;
+}
+.site-nav .menu {
+  border-radius: 0 0 15px 15px !important;
 }
 .header,
 .column {
