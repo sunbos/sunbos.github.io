@@ -1249,7 +1249,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #3effff;
+    background: #ffff3d;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -2883,7 +2883,7 @@ header.header {
   background: transparent !important;
   box-shadow: none !important;
 }
-.menu-item-active a,
+.menu-item a.menu-item-active,
 .menu-item a:hover {
   background: #333 !important; /* 亮色模式下直接使用深黑底色反转 */
   color: #fff !important; /* 文字纯白 */
@@ -2928,7 +2928,7 @@ header.header {
 :root[data-theme="dark"] .site-subtitle {
   color: #eee !important;
 }
-:root[data-theme="dark"] .menu-item-active a,
+:root[data-theme="dark"] .menu-item a.menu-item-active,
 :root[data-theme="dark"] .menu-item a:hover {
   background: #e5e5e5 !important; /* 暗色模式下使用非常显眼的亮灰色 */
   color: #222 !important; /* 文字变成深黑 */
