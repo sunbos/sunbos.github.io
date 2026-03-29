@@ -1,25 +1,52 @@
-# NexT Theme Configuration Overrides
+# NexT Theme Configuration
 
-# ---------------------------------------------------------------
-# Scheme Settings
-# ---------------------------------------------------------------
-
-# Schemes
-# scheme: Muse
-# scheme: Mist
-# scheme: Pisces
 scheme: Gemini
 
-# ---------------------------------------------------------------
-# Font & Animation Settings
-# ---------------------------------------------------------------
+avatar:
+  url: https://avatars.githubusercontent.com/u/21107549?v=4
+  rounded: true
+  rotated: true
+
+social:
+  GitHub: https://github.com/sunbos || fab fa-github
+  QQ: http://wpa.qq.com/msgrd?v=3&uin=1443584939&site=qq&menu=yes || fab fa-qq
+  E-Mail: mailto:1443584939@qq.com || fa fa-envelope
+
 motion:
   enable: true
 
-# ---------------------------------------------------------------
-# Other Settings
-# ---------------------------------------------------------------
+copycode:
+  enable: true
+  show_result: true
+  style: mac
 
-# NexT theme plugin: Hexo Blog Encrypt
-# https://github.com/D0n9X1n/hexo-blog-encrypt
-# The encryption will be handled by the plugin, so we just declare it if needed.
+bookmark:
+  enable: true
+  color: "#222"
+  save: "auto"
+
+fancybox: true
+lazyload: true
+pangu: true
+
+back2top:
+  enable: true
+  sidebar: false
+  scrollpercent: true
+
+reading_progress:
+  enable: true
+
+local_search:
+  enable: true
+  trigger: auto
+
+waline:
+  enable: true
+  serverURL: https://imnerd-api-lemon.vercel.app
+  placeholder: ヾﾉ≧∀≦)o来啊，快活啊!
+  avatar: mm
+  visitor: true
+
+custom_file_path:
+  bodyEnd: source/_data/body-end.njk
